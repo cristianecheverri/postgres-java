@@ -1,4 +1,4 @@
-package base;
+package bancario.base;
 import java.sql.SQLException;
 import java.sql.Statement;
 

@@ -1,4 +1,4 @@
-package base;
+package bancario.base;
 public class Cliente {
 
     String cedula;

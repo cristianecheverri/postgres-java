@@ -1,8 +1,9 @@
+package bancario;
 
 import java.util.ArrayList;
 
-import base.Cliente;
-import base.Cuenta;
+import bancario.base.Cliente;
+import bancario.base.Cuenta;
 
 public class Banco {
     String nombre;

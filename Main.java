@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import bancario.OperacionesBanco;
+
 public class Main {
     public static void main(String[] args) {
         String url = "jdbc:postgresql://localhost:5432/banco";

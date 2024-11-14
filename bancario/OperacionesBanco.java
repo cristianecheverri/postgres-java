@@ -1,6 +1,7 @@
+package bancario;
 import javax.swing.JOptionPane;
 
-import base.Cuenta;
+import bancario.base.Cuenta;
 
 public class OperacionesBanco {
     private String decisionTxt;
