@@ -17,13 +17,13 @@ public class Main {
             // boolean result = statement.execute("INSERT INTO cuentas (numero_cuenta, tipo_cuenta, saldo_cuenta) VALUES ('123456789', 'Ahorro', 1000) RETURNING id_cuenta");
             // System.out.println(result);
 
-            Cuenta cuenta = new Cuenta("Ahorro", "utyvdhb-lioj", 1000);
-            boolean result = cuenta.insertarCuenta(statement);
-            if (result) {
-                System.out.println("Cuenta insertada correctamente");
-            } else {
-                System.out.println("No se pudo insertar la cuenta");
-            }
+            // Cuenta cuenta = new Cuenta("Ahorro", "utyvdhb-lioj", 1000);
+            // boolean result = cuenta.insertarCuenta(statement);
+            // if (result) {
+            //     System.out.println("Cuenta insertada correctamente");
+            // } else {
+            //     System.out.println("No se pudo insertar la cuenta");
+            // }
 
 
             ResultSet resultSet = statement.executeQuery("SELECT * FROM cuentas");
@@ -38,11 +38,11 @@ public class Main {
                 // Imprimir los resultados
                 System.out.println("ID: " + idCuenta + ", Numero: " + numeroCuenta + ", Tipo: " + tipoCuenta + ", Saldo: " + saldo);
             }
-
-            
-
         } catch (SQLException e) {
             System.out.println("Error de conexión: " + e.getMessage());
         }
+
+        OperacionesBanco operacionesBanco = new OperacionesBanco();
+        operacionesBanco.menuOpciones();
     }
 }

@@ -1,3 +1,4 @@
+package base;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -5,15 +6,17 @@ public class Cuenta {
     double saldo;
     String numero;
     String tipo;
+    Cliente titular;
 
-    public Cuenta(String tipo, String numero, double saldo) {
+    public Cuenta(String tipo, String numero, double saldo, Cliente titular) {
         this.tipo = tipo;
         this.numero = numero;
         this.saldo = saldo;
+        this.titular = titular;
     }
 
-    public Cuenta(String tipo, String numero) {
-        this(tipo, numero, 0);
+    public Cuenta(String tipo, String numero, Cliente titular) {
+        this(tipo, numero, 0, titular);
     }
 
     public double getSaldo() {
@@ -28,6 +31,10 @@ public class Cuenta {
         return numero;
     }
 
+    public Cliente getTitular() {
+        return titular;
+    }
+
     public void setNumero(String numero) {
         this.numero = numero;
     }
@@ -40,11 +47,11 @@ public class Cuenta {
         this.tipo = tipo;
     }
 
-    double consultarSaldo() {
+    public double consultarSaldo() {
         return saldo;
     }
 
-    boolean retirar(double cantidad) {
+    public boolean retirar(double cantidad) {
         if (saldo >= cantidad) {
             saldo -= cantidad;
             return true;
@@ -53,7 +60,7 @@ public class Cuenta {
         }
     }
 
-    void consignar(double cantidad) {
+    public void consignar(double cantidad) {
         saldo += cantidad;
     }
 
